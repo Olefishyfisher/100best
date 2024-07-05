@@ -1,23 +1,52 @@
 let currentAlbumIndex = 0;
 
+function createAlbumElement(album) {
+    const albumDiv = document.createElement('div');
+    albumDiv.classList.add('album');
+
+    const img = document.createElement('img');
+    img.src = album.image;
+    img.alt = album.title;
+
+    const infoDiv = document.createElement('div');
+    infoDiv.classList.add('info');
+
+    const rankDiv = document.createElement('div');
+    rankDiv.classList.add('rank');
+    rankDiv.textContent = album.rank;
+
+    const titleDiv = document.createElement('div');
+    titleDiv.classList.add('title');
+    titleDiv.textContent = album.title;
+
+    const artistDiv = document.createElement('div');
+    artistDiv.classList.add('artist');
+    artistDiv.textContent = album.artist;
+
+    infoDiv.appendChild(rankDiv);
+    infoDiv.appendChild(titleDiv);
+    infoDiv.appendChild(artistDiv);
+
+    albumDiv.appendChild(img);
+    albumDiv.appendChild(infoDiv);
+
+    return albumDiv;
+}
+
 function showAlbum(index) {
-    const albums = document.querySelectorAll('.album');
-    albums.forEach((album, i) => {
-        album.classList.remove('active');
-        if (i === index) {
-            album.classList.add('active');
-        }
-    });
+    const albumsContainer = document.querySelector('.albums-container');
+    albumsContainer.innerHTML = '';
+    const albumElement = createAlbumElement(albums[index]);
+    albumElement.classList.add('active');
+    albumsContainer.appendChild(albumElement);
 }
 
 function nextAlbum() {
-    const albums = document.querySelectorAll('.album');
     currentAlbumIndex = (currentAlbumIndex + 1) % albums.length;
     showAlbum(currentAlbumIndex);
 }
 
 function prevAlbum() {
-    const albums = document.querySelectorAll('.album');
     currentAlbumIndex = (currentAlbumIndex - 1 + albums.length) % albums.length;
     showAlbum(currentAlbumIndex);
 }
