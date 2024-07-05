@@ -13,6 +13,12 @@ body {
 .container {
     text-align: center;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .header {
@@ -35,6 +41,7 @@ body {
 .carousel {
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
 }
 
@@ -44,12 +51,14 @@ body {
     justify-content: center;
     overflow: hidden;
     width: 300px;
+    height: 300px;
+    position: relative;
 }
 
 .album {
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: 100%;
     transition: transform 0.5s, opacity 0.5s;
     transform: scale(0);
     opacity: 0;
@@ -74,6 +83,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .rank {
@@ -98,6 +108,7 @@ body {
     font-size: 32px;
     color: white;
     cursor: pointer;
+    z-index: 1;
 }
 
 .arrow.left {
