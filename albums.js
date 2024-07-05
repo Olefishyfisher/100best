@@ -1,4 +1,3 @@
-
 const albums = [
     {
         rank: 99,
@@ -11,6 +10,6 @@ const albums = [
         title: "Another Album",
         artist: "Another Artist",
         image: "another-album.jpg"
-    },
-    // Add more albums here
+    }
+    // Add more albums as needed
 ];
