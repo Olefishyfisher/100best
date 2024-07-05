@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Songs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="apple-music-icon.png" alt="Apple Music Icon">
+            <h1>100 Best Albums</h1>
+        </div>
+        <div class="carousel">
+            <div class="arrow left" onclick="prevAlbum()">&#8249;</div>
+            <div class="album active">
+                <img src="hotel-california.jpg" alt="Hotel California">
+                <div class="info">
+                    <div class="rank">99</div>
+                    <div class="title">Hotel California</div>
+                    <div class="artist">Eagles</div>
+                </div>
+            </div>
+            <!-- Add more albums in a similar format -->
+            <div class="arrow right" onclick="nextAlbum()">&#8250;</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
